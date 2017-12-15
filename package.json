@@ -1,0 +1,20 @@
+{
+  "name": "react-motor-rivals",
+  "version": "1.0.0",
+  "description": "Converting my motor-rivals repo into React components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafbatista/react-motor-rivals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafbatista/react-motor-rivals/issues"
+  },
+  "homepage": "https://github.com/rafbatista/react-motor-rivals#readme"
+}
