@@ -4,17 +4,45 @@
   "description": "Converting my motor-rivals repo into React components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "browserify client/index.js -t babelify -o public/bundle.js",
+    "bundle:watch":
+      "watchify client/index.js -vd -t babelify -o public/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rafbatista/react-motor-rivals.git"
+    "url": "git+https://github.com/rafbatista/react-modal.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rafbatista/react-motor-rivals/issues"
+    "url": "https://github.com/rafbatista/react-modal/issues"
   },
-  "homepage": "https://github.com/rafbatista/react-motor-rivals#readme"
+  "homepage": "https://github.com/rafbatista/react-modal#readme",
+  "dependencies": {
+    "babel-core": "6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.0",
+    "babelify": "8.0.0",
+    "browserify": "14.5.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "styled-components": "^2.2.3",
+    "watchify": "3.9.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "eslint": "4.5.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-node": "5.1.1",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-react": "7.3.0",
+    "eslint-plugin-standard": "3.0.1",
+    "htmlhint": "0.9.13",
+    "husky": "0.14.3",
+    "stylelint": "8.0.0",
+    "stylelint-config-standard": "17.0.0",
+    "watchify": "^3.9.0"
+  }
 }
