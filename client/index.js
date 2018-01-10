@@ -148,7 +148,3 @@ class Carlist extends React.Component {
     )
   }
 }
-
-class CarItem extends React.Component {
-  render() {}
-}
