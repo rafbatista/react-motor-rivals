@@ -148,3 +148,13 @@ class Carlist extends React.Component {
     )
   }
 }
+
+class CarItem extends React.Component {
+  render() {
+    return (
+      <div className="col s3">
+        <div className="car-container" />
+      </div>
+    )
+  }
+}
