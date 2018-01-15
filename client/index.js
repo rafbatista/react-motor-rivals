@@ -1,30 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-const mainPage = (
-  <div className="container">
-    <div className="row">
-      <div className="col s12">
-        <h1>Motor Rivals</h1>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col s12">
-        <h2>Where luxury sport meets its match.</h2>
-      </div>
-    </div>
-    <div className="row" />
-    <div className="col s12 h3">
-      <h3>All Cars</h3>
-    </div>
-    <div className="row car-list" />
-    <div className="row car-specs-list hidden" />
-    <div className="row car-compare-list hidden" />
-  </div>
-)
-
-render(mainPage, document.querySelector('body'))
-
 const cars = [
   {
     id: 1,
@@ -139,13 +115,46 @@ const cars = [
   }
 ]
 
-class Carlist extends React.Component {
+class MainPage extends React.Component {
   render() {
     return (
-      <div>
-        <CarItem cars={this.product.cars} />
+      <div className="container">
+        <div className="row">
+          <div className="col s12">
+            <h1>Motor Rivals</h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col s12">
+            <h2>Where luxury sport meets its match.</h2>
+          </div>
+        </div>
+        <div className="row" />
+        <div className="col s12 h3">
+          <h3>All Cars</h3>
+        </div>
+        <CarList cars={this.props.cars} />
+        <div className="row car-specs-list hidden" />
+        <div className="row car-compare-list hidden" />
       </div>
     )
+  }
+}
+
+class CarList extends React.Component {
+  render() {
+    const cars = this.props.cars
+    const carItems = cars.map(car => (
+      <CarItem
+        key={car.id}
+        id={car.id}
+        year={car.make}
+        make={car.make}
+        model={car.model}
+        imgSrc={car.imgSrc}
+      />
+    ))
+    return <div className="row car-list">{carItems}</div>
   }
 }
 
@@ -153,8 +162,21 @@ class CarItem extends React.Component {
   render() {
     return (
       <div className="col s3">
-        <div className="car-container" />
+        <div className="car-container" id={this.props.id}>
+          <span className="icon-title">
+            {this.props.year + ' ' + this.props.make + ' ' + this.props.model}
+          </span>
+          <img
+            className="car-icon"
+            src={this.props.imgSrc}
+            alt={
+              this.props.year + ' ' + this.props.make + ' ' + this.props.model
+            }
+          />
+        </div>
       </div>
     )
   }
 }
+
+render(<MainPage cars={cars} />, document.querySelector('body'))
