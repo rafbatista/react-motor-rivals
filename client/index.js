@@ -115,6 +115,32 @@ const cars = [
   }
 ]
 
+class MainPage extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col s12">
+            <h1>Motor Rivals</h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col s12">
+            <h2>Where luxury sport meets its match.</h2>
+          </div>
+        </div>
+        <div className="row" />
+        <div className="col s12 h3">
+          <h3>All Cars</h3>
+        </div>
+        <CarList cars={this.props.cars} />
+        <div className="row car-specs-list hidden" />
+        <div className="row car-compare-list hidden" />
+      </div>
+    )
+  }
+}
+
 class CarList extends React.Component {
   render() {
     const cars = this.props.cars
@@ -153,4 +179,4 @@ class CarItem extends React.Component {
   }
 }
 
-render(<CarList cars={cars} />, document.querySelector('.container'))
+render(<MainPage cars={cars} />, document.querySelector('body'))
