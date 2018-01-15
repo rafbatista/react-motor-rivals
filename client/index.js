@@ -115,31 +115,7 @@ const cars = [
   }
 ]
 
-const mainPage = (
-  <div className="container">
-    <div className="row">
-      <div className="col s12">
-        <h1>Motor Rivals</h1>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col s12">
-        <h2>Where luxury sport meets its match.</h2>
-      </div>
-    </div>
-    <div className="row" />
-    <div className="col s12 h3">
-      <h3>All Cars</h3>
-    </div>
-    <div className="row car-list" />
-    <div className="row car-specs-list hidden" />
-    <div className="row car-compare-list hidden" />
-  </div>
-)
-
-render(mainPage, document.querySelector('body'))
-
-class Carlist extends React.Component {
+class CarList extends React.Component {
   render() {
     const cars = this.props.cars
     const carItems = cars.map(car => (
@@ -176,3 +152,5 @@ class CarItem extends React.Component {
     )
   }
 }
+
+render(<CarList cars={cars} />, document.querySelector('.container'))
