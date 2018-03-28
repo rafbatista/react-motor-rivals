@@ -159,6 +159,10 @@ class CarList extends React.Component {
 }
 
 class CarItem extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <div className="col s3">
