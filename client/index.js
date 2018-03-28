@@ -8,7 +8,7 @@ const cars = [
     make: 'Audi',
     model: 'A5',
     imgSrc: 'images/audi-a5-2018.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, All-wheel-drive',
       msrp: '$43,775',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -27,7 +27,7 @@ const cars = [
     make: 'BMW',
     model: '430i',
     imgSrc: 'images/bmw-430i-2018.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$43,300',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -46,7 +46,7 @@ const cars = [
     make: 'Cadillac',
     model: 'ATS Coupe',
     imgSrc: 'images/cadillac-ats-coupe-2018.png',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$37,895',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -65,7 +65,7 @@ const cars = [
     make: 'Infiniti',
     model: 'Q60',
     imgSrc: 'images/infiniti-q60-2017.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$39,855',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -83,7 +83,7 @@ const cars = [
     make: 'Lexus',
     model: 'RC 200t',
     imgSrc: 'images/lexus-rc200t-2017.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$40,155',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -101,7 +101,7 @@ const cars = [
     make: 'Mercedez-Benz',
     model: 'C300 Coupe',
     imgSrc: 'images/mercedez-benz-c300-coupe-2018.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$43,200',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -152,6 +152,7 @@ class CarList extends React.Component {
         make={car.make}
         model={car.model}
         imgSrc={car.imgSrc}
+        specs={car.specs}
       />
     ))
     return <div className="row car-list">{carItems}</div>
@@ -173,6 +174,88 @@ class CarItem extends React.Component {
               this.props.year + ' ' + this.props.make + ' ' + this.props.model
             }
           />
+        </div>
+      </div>
+    )
+  }
+}
+
+class CarSpecs extends React.Component {
+  render() {
+    return (
+      <div className="row car-specs-list">
+        <div data-number={this.props.id}>
+          <div className="col s12">
+            <h3 className="specs-header">{this.props.name}</h3>
+          </div>
+          <img
+            className="col s5 specs-img"
+            src={this.props.imgSrc}
+            alt={this.props.name}
+          />
+          <div className="col s6 push-s2 car-specs">
+            <span>
+              <strong>Vehicle Type: </strong>
+              {this.props.specs.vehicleType}
+            </span>
+            <br />
+            <span>
+              <strong>MSRP: </strong>
+              {this.props.specs.msrp}
+            </span>
+            <br />
+            <span>
+              <strong>Engine Type: </strong>
+              {this.props.specs.engineType}
+            </span>
+            <br />
+            <span>
+              <strong>Engine Displacement: </strong>
+              {this.props.specs.displacement}
+            </span>
+            <br />
+            <span>
+              <strong>Transmission Type: </strong>
+              {this.props.specs.transmission}
+            </span>
+            <br />
+            <span>
+              <strong>0 to 60mph: </strong>
+              {this.props.specs.zeroToSixty}
+            </span>
+            <br />
+            <span>
+              <strong>Dimensions: </strong>
+              {this.props.dimensions}
+            </span>
+            <br />
+            <span>
+              <strong>Curb Weight: </strong>
+              {this.props.specs.curbWeight}
+            </span>
+            <br />
+            <span>
+              <strong>Fuel Economy: </strong>
+              {this.props.specs.fuelEconomy}
+            </span>
+            <br />
+          </div>
+          <div className="col s12 button-container">
+            <button
+              className="col s4 push-s7 spec-button"
+              id="compare-button"
+              type="button"
+            >
+              Add Car for Comparison
+            </button>
+            <button
+              className="col s4 pull-s4 spec-button"
+              id="return-button"
+              type="button"
+            >
+              Return to All Cars
+            </button>
+          </div>
         </div>
       </div>
     )
