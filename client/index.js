@@ -152,6 +152,7 @@ class CarList extends React.Component {
         make={car.make}
         model={car.model}
         imgSrc={car.imgSrc}
+        specs={car.specs}
       />
     ))
     return <div className="row car-list">{carItems}</div>
