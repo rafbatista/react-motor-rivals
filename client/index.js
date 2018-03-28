@@ -180,4 +180,86 @@ class CarItem extends React.Component {
   }
 }
 
+class CarSpecs extends React.Component {
+  render() {
+    return (
+      <div className="row car-specs-list">
+        <div data-number={this.props.id}>
+          <div className="col s12">
+            <h3 className="specs-header">{this.props.name}</h3>
+          </div>
+          <img
+            className="col s5 specs-img"
+            src={this.props.imgSrc}
+            alt={this.props.name}
+          />
+          <div className="col s6 push-s2 car-specs">
+            <span>
+              <strong>Vehicle Type: </strong>
+              {this.props.specs.vehicleType}
+            </span>
+            <br />
+            <span>
+              <strong>MSRP: </strong>
+              {this.props.specs.msrp}
+            </span>
+            <br />
+            <span>
+              <strong>Engine Type: </strong>
+              {this.props.specs.engineType}
+            </span>
+            <br />
+            <span>
+              <strong>Engine Displacement: </strong>
+              {this.props.specs.displacement}
+            </span>
+            <br />
+            <span>
+              <strong>Transmission Type: </strong>
+              {this.props.specs.transmission}
+            </span>
+            <br />
+            <span>
+              <strong>0 to 60mph: </strong>
+              {this.props.specs.zeroToSixty}
+            </span>
+            <br />
+            <span>
+              <strong>Dimensions: </strong>
+              {this.props.dimensions}
+            </span>
+            <br />
+            <span>
+              <strong>Curb Weight: </strong>
+              {this.props.curbWeight}
+            </span>
+            <br />
+            <span>
+              <strong>Fuel Economy: </strong>
+              {this.props.fuelEconomy}
+            </span>
+            <br />
+          </div>
+          <div className="col s12 button-container">
+            <button
+              className="col s4 push-s7 spec-button"
+              id="compare-button"
+              type="button"
+            >
+              Add Car for Comparison
+            </button>
+            <button
+              className="col s4 pull-s4 spec-button"
+              id="return-button"
+              type="button"
+            >
+              Return to All Cars
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
 render(<MainPage cars={cars} />, document.querySelector('body'))
