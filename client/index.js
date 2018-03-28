@@ -231,12 +231,12 @@ class CarSpecs extends React.Component {
             <br />
             <span>
               <strong>Curb Weight: </strong>
-              {this.props.curbWeight}
+              {this.props.specs.curbWeight}
             </span>
             <br />
             <span>
               <strong>Fuel Economy: </strong>
-              {this.props.fuelEconomy}
+              {this.props.specs.fuelEconomy}
             </span>
             <br />
           </div>
