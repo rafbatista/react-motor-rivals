@@ -8,7 +8,7 @@ const cars = [
     make: 'Audi',
     model: 'A5',
     imgSrc: 'images/audi-a5-2018.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, All-wheel-drive',
       msrp: '$43,775',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -27,7 +27,7 @@ const cars = [
     make: 'BMW',
     model: '430i',
     imgSrc: 'images/bmw-430i-2018.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$43,300',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -46,7 +46,7 @@ const cars = [
     make: 'Cadillac',
     model: 'ATS Coupe',
     imgSrc: 'images/cadillac-ats-coupe-2018.png',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$37,895',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -65,7 +65,7 @@ const cars = [
     make: 'Infiniti',
     model: 'Q60',
     imgSrc: 'images/infiniti-q60-2017.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$39,855',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -83,7 +83,7 @@ const cars = [
     make: 'Lexus',
     model: 'RC 200t',
     imgSrc: 'images/lexus-rc200t-2017.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$40,155',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -101,7 +101,7 @@ const cars = [
     make: 'Mercedez-Benz',
     model: 'C300 Coupe',
     imgSrc: 'images/mercedez-benz-c300-coupe-2018.jpg',
-    specifications: {
+    specs: {
       vehicleType: 'Front-engine, Rear-wheel-drive',
       msrp: '$43,200',
       engineType: 'Turbocharged 2.0L inline-4-cylinder',
@@ -159,10 +159,6 @@ class CarList extends React.Component {
 }
 
 class CarItem extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div className="col s3">
