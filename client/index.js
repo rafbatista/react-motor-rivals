@@ -148,14 +148,30 @@ class CarList extends React.Component {
       <CarItem
         key={car.id}
         id={car.id}
-        year={car.make}
+        year={car.year}
         make={car.make}
         model={car.model}
         imgSrc={car.imgSrc}
         specs={car.specs}
       />
     ))
-    return <div className="row car-list">{carItems}</div>
+    const carSpecs = cars.map(car => (
+      <CarSpecs
+        key={car.id}
+        id={car.id}
+        year={car.year}
+        make={car.make}
+        model={car.model}
+        imgSrc={car.imgSrc}
+        specs={car.specs}
+      />
+    ))
+    return (
+      <div className="row car-list">
+        {carItems}
+        {carSpecs}
+      </div>
+    )
   }
 }
 
@@ -186,12 +202,16 @@ class CarSpecs extends React.Component {
       <div className="row car-specs-list">
         <div data-number={this.props.id}>
           <div className="col s12">
-            <h3 className="specs-header">{this.props.name}</h3>
+            <h3 className="specs-header">
+              {this.props.year + ' ' + this.props.make + ' ' + this.props.model}
+            </h3>
           </div>
           <img
             className="col s5 specs-img"
             src={this.props.imgSrc}
-            alt={this.props.name}
+            alt={
+              this.props.year + ' ' + this.props.make + ' ' + this.props.model
+            }
           />
           <div className="col s6 push-s2 car-specs">
             <span>
