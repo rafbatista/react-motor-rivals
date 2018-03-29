@@ -155,7 +155,23 @@ class CarList extends React.Component {
         specs={car.specs}
       />
     ))
-    return <div className="row car-list">{carItems}</div>
+    const carSpecs = cars.map(car => (
+      <CarSpecs
+        key={car.id}
+        id={car.id}
+        year={car.make}
+        make={car.make}
+        model={car.model}
+        imgSrc={car.imgSrc}
+        specs={car.specs}
+      />
+    ))
+    return (
+      <div className="row car-list">
+        {carItems}
+        {carSpecs}
+      </div>
+    )
   }
 }
 
