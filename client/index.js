@@ -148,7 +148,7 @@ class CarList extends React.Component {
       <CarItem
         key={car.id}
         id={car.id}
-        year={car.make}
+        year={car.year}
         make={car.make}
         model={car.model}
         imgSrc={car.imgSrc}
@@ -159,7 +159,7 @@ class CarList extends React.Component {
       <CarSpecs
         key={car.id}
         id={car.id}
-        year={car.make}
+        year={car.year}
         make={car.make}
         model={car.model}
         imgSrc={car.imgSrc}
