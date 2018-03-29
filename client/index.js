@@ -202,12 +202,16 @@ class CarSpecs extends React.Component {
       <div className="row car-specs-list">
         <div data-number={this.props.id}>
           <div className="col s12">
-            <h3 className="specs-header">{this.props.name}</h3>
+            <h3 className="specs-header">
+              {this.props.year + ' ' + this.props.make + ' ' + this.props.model}
+            </h3>
           </div>
           <img
             className="col s5 specs-img"
             src={this.props.imgSrc}
-            alt={this.props.name}
+            alt={
+              this.props.year + ' ' + this.props.make + ' ' + this.props.model
+            }
           />
           <div className="col s6 push-s2 car-specs">
             <span>
