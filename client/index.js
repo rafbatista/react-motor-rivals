@@ -134,7 +134,6 @@ class MainPage extends React.Component {
           <h3>All Cars</h3>
         </div>
         <CarList cars={this.props.cars} />
-        <div className="row car-specs-list hidden" />
         <div className="row car-compare-list hidden" />
       </div>
     )
