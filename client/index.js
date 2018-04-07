@@ -141,6 +141,12 @@ class MainPage extends React.Component {
 }
 
 class CarList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      detailsShowing: false
+    }
+  }
   render() {
     const cars = this.props.cars
     const carItems = cars.map(car => (
