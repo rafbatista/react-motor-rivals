@@ -180,6 +180,7 @@ class CarItem extends React.Component {
     this.state = {
       detailsShowing: false
     }
+    this.showDetails = this.showDetals.bind(this)
   }
 
   showDetails() {
