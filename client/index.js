@@ -182,6 +182,9 @@ class CarItem extends React.Component {
     }
   }
 
+  showDetails() {
+    this.setState({ detailsShowing: true })
+  }
   render() {
     return (
       <div className="col s3">
